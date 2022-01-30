@@ -10,6 +10,30 @@ public class Main {
 		//[1]과 [2]를 생성하시고 정보를 출력한 뒤 서로 2번 공격하면 어떻게 되는지 구현
 		//attack()메소드를 Player에 추가한 다음,
 		//공격하면 상대방의 체력이 나의 공격력만큼 감소되도록 구현
+		
+		Player p1 = new Player("뽀로로",10,100);
+		Player p2 = new Player("타요",15,80);
+		
+		p1.setTarget(p2);
+		p2.setTarget(p1);
+		
+		p1.disp();
+		p2.disp();
+		
+		System.out.println("게임 시작!");
+		
+		
+		for (int i=0;i<2;i++) {
+			p1.attack();
+			p1.disp();
+			p2.disp();
+			
+			p2.attack();
+			p1.disp();
+			p2.disp();
+		}
+		
+		
 	}
 
 }
